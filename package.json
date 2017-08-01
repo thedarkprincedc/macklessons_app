@@ -17,6 +17,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "crawl": "cd crawler && php app.php",
-    "toolbox": "react-toolbox-themr"
+    "backend": "cd resources && nodemon",
+    "toolbox": "react-toolbox-themr",
+    "setup": "./scripts/setup.sh"
   }
 }
