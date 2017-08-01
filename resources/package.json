@@ -1,0 +1,26 @@
+{
+  "name": "macklessons-resources",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "compression": "^1.6.2",
+    "connect-timeout": "^1.8.0",
+    "express": "^4.15.2",
+    "express-fileupload": "^0.1.2",
+    "express-http-proxy": "^1.0.3",
+    "http-proxy": "^1.16.2",
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.6",
+    "mongoose-paginate": "^5.0.3",
+    "nodemon": "^1.11.0",
+    "request": "^2.81.0",
+    "x2js": "^3.1.1"
+  }
+}
