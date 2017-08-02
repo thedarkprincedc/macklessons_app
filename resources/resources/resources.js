@@ -6,7 +6,13 @@ module.exports = function(app, mongoose, bodyParser){
     app.get('/api/getEpisodeList', function(req, res) {
         var page = parseInt(req.query.page || 0),
             limit = parseInt(req.query.limit || defaultLimit);
-        EpisodeModel.paginate({}, { offset: page, limit: limit }, function(err, result) {
+        EpisodeModel.paginate({}, { 
+            offset: page, 
+            limit: limit,
+            sort:{
+        date: -1 //Sort by Date Added DESC
+    } ,
+        }, function(err, result) {
             if (err){
                 res.send(err);
                 return;

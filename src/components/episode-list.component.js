@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-//import Episode from './episode.component';
 import { List, ListItem, ListSubHeader, ListDivider } from 'react-toolbox/lib/list';
-import {player} from "https://cdn.plyr.io/2.0.13/plyr.js";
+
 class EpisodeList extends Component {
     constructor(props){
         super(props);
@@ -23,29 +22,28 @@ class EpisodeList extends Component {
         }).catch(function (error) { console.log(error); });
     }
     handleListItem(){
+        this[0].props.onEpisodeClicked(this);
+
         console.log(this);
     }
     render(){
+        var state = this.state;
         const ListTest = () => (
-            <List selectable ripple>
+            <List selectable ripple className="videoList">
                 <ListSubHeader caption={this.props.header} />
                 {
-                    this.state.docs.map((obj) =>
-                        <a key={obj._id} href={obj.audiourl}>
+                    this.state.docs.map((obj) =>   
                         <ListItem
                             key={obj._id}
                             avatar={obj.imageurl}
                             caption={obj.title}
                             legend={obj.date||"444"} 
-                            rightIcon='star'
-                            onClick={this.handleListItem}
-                            />
-                        </a>
+                            onClick={this.handleListItem.bind([this, obj])}
+                            />         
                     )     
                 }
             </List>
         );
-
         return (
            ListTest()
         );

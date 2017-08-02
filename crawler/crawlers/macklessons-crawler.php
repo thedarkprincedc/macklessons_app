@@ -1,8 +1,8 @@
 <?php
 require_once("vendor/autoload.php");
 require_once("constants.php");
-require_once("./mongo-database.php");
-class MyCrawler extends PHPCrawler 
+require_once("mongo-database.php");
+class MacklessonsCrawler extends PHPCrawler 
 { 
     public $dataObject;
     public $detailArray;
@@ -75,6 +75,7 @@ class MyCrawler extends PHPCrawler
             $tempArr = new stdClass();
             $tempArr->title = str_replace(["Episiode","Episode#"], "Episode #",str_replace(["&quot;","09&#039;","&#039;"],"",trim($article->find("h2 > a", 0)->title)));                            
             $tempArr->date =  trim($article->find("small", 0)->plaintext); 
+            $tempArr->date = date('Y-m-d H:i:s',strtotime($tempArr->date ." UTC"));
             $tempArr->imageurl = "";
             $tempArr->audiourl = "";
             if($im = $article->find("div > img", 0)){

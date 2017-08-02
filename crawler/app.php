@@ -1,6 +1,6 @@
 <?php
-    require_once("crawler.php");
-    
+    require_once("./crawlers/macklessons-crawler.php");
+    date_default_timezone_set('Europe/Stockholm');
     print("\n--------------------------------------------\n");
     print("*           MackLessons Crawler            *\n");
     print("--------------------------------------------\n");
@@ -17,7 +17,7 @@
     $bCommandLine = (!(empty($command)))?true:false;
 
     try{ 
-        $crawler = new MyCrawler(); 
+        $crawler = new MacklessonsCrawler(); 
         $crawler->setURL(_MACKLESSONSRADIO_URL_);  
         $crawler->addContentTypeReceiveRule("#text/html#"); 
         $crawler->addURLFollowRule("#(index\/page\/[0-9]+)$# i");
