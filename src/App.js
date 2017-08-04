@@ -23,19 +23,16 @@ class App extends Component {
       sources: [{
         src:      data[1].audiourl,
         type:     'audio/mp3'
-      }],
-      
+      }]
     });
   }
-   componentDidMount() {
+   componentDidMount() { debugger;
          this.plyr = PlayerService();
+       
     }
   render() {
-    //
     return (
       <div className="App">
-        
-
          <Grid fluid>
         <Row>
           <Col xs={6}>
@@ -51,11 +48,6 @@ class App extends Component {
           </Col>
         </Row>
       </Grid>
-     
-          
- 
-         
-       
       </div>
     );
   }
