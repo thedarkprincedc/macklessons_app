@@ -29,7 +29,7 @@
 }
 .videoList{
   margin-top:10px;
-  height: 95vh;
+  height: 75vh;
   overflow-y:scroll;
 }
 .plyr video{

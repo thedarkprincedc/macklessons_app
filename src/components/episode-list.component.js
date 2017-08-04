@@ -29,8 +29,9 @@ class EpisodeList extends Component {
     render(){
         var state = this.state;
         const ListTest = () => (
+            <div>
+                <h2>{this.props.header}</h2><hr/>
             <List selectable ripple className="videoList">
-                <ListSubHeader caption={this.props.header} />
                 {
                     this.state.docs.map((obj) =>   
                         <ListItem
@@ -43,6 +44,7 @@ class EpisodeList extends Component {
                     )     
                 }
             </List>
+            </div>
         );
         return (
            ListTest()
